@@ -1,0 +1,21 @@
+Q1 => select last_name, first_name from employees;
+Q2 => select last_name, first_name, hire_date from employees where hire_date>'1999-08-01';
+Q3 => select * from dept_emp union select * from dept_manager;
+Q4 => select last_name, first_name, salary from employees join salaries on (employees.emp_no=salaries.emp_no) where employees.emp_no=499593;
+Q5 => select
+	e.emp_no,
+	e.last_name,
+	e.first_name,
+	d.dept_name,
+	de.from_date,
+	de.to_date
+      from
+	employees e,
+	dept_emp de,
+	departments d
+      where (
+	e.emp_no=de.emp_no &&
+	de.dept_no=d.dept_no &&
+	e.emp_no=499902
+        );
+Q6 => select last_name, count(*) from employees where last_name='Gewali' group by last_name;

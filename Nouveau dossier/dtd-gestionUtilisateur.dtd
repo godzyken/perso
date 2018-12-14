@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding ="ISO-8859-1" ?>
+<!ELEMENT MCD_XML(Liste_Personne, Liste_Role, Liste_Utilisateur, Liste_Administrateur, Liste_Manager, Liste_Formateur, Liste_Stagiaire)>
+<!ELEMENT  Liste_Personne(Personne*)>
+<!ELEMENT  Personne   EMPTY >
+<!ATTLIST  Personne
+   id         IDREF   #REQUIRED 
+   nom        CDATA   #REQUIRED 
+   prenom     CDATA   #REQUIRED 
+   mail       CDATA   #REQUIRED 
+>
+<!ELEMENT  Liste_Role(Role*)>
+<!ELEMENT  Role   EMPTY >
+<!ATTLIST  Role
+   id           IDREF   #REQUIRED 
+   libellee     CDATA   #REQUIRED 
+>
+<!ELEMENT  Liste_Utilisateur(Utilisateur*)>
+<!ELEMENT  Utilisateur   EMPTY >
+<!ATTLIST  Utilisateur
+   id               IDREF   #REQUIRED 
+   mot_de_passe     CDATA   #REQUIRED 
+   id_Role          CDATA   #REQUIRED 
+>
+<!ELEMENT  Liste_Administrateur(Administrateur*)>
+<!ELEMENT  Administrateur   EMPTY >
+<!ATTLIST  Administrateur
+   id_Personne     IDREF   #REQUIRED 
+   id              IDREF   #REQUIRED 
+   nom             CDATA   #REQUIRED 
+   prenom          CDATA   #REQUIRED 
+   mail            CDATA   #REQUIRED 
+>
+<!ELEMENT  Liste_Manager(Manager*)>
+<!ELEMENT  Manager   EMPTY >
+<!ATTLIST  Manager
+   id_Personne     IDREF   #REQUIRED 
+   id              IDREF   #REQUIRED 
+   nom             CDATA   #REQUIRED 
+   prenom          CDATA   #REQUIRED 
+   mail            CDATA   #REQUIRED 
+>
+<!ELEMENT  Liste_Formateur(Formateur*)>
+<!ELEMENT  Formateur   EMPTY >
+<!ATTLIST  Formateur
+   id_Personne     IDREF   #REQUIRED 
+   id              IDREF   #REQUIRED 
+   nom             CDATA   #REQUIRED 
+   prenom          CDATA   #REQUIRED 
+   mail            CDATA   #REQUIRED 
+>
+<!ELEMENT  Liste_Stagiaire(Stagiaire*)>
+<!ELEMENT  Stagiaire   EMPTY >
+<!ATTLIST  Stagiaire
+   id_Personne     IDREF   #REQUIRED 
+   id              IDREF   #REQUIRED 
+   date_certif     CDATA   #REQUIRED 
+   nom             CDATA   #REQUIRED 
+   prenom          CDATA   #REQUIRED 
+   mail            CDATA   #REQUIRED 
+>
